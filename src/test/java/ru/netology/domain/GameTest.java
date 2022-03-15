@@ -77,23 +77,35 @@ class GameTest {
 
     @Test
     public void shouldThrowNotRegisteredExeption() {
-        game.register(player3);
+        game.register(player1);
         game.register(player2);
 
         try {
-            game.round("John", "Nick");
+            game.round("Nick", "Non-existed");
         } catch (RuntimeException ex) {
             Assertions.assertThrows(NotRegisteredException.class, () -> game.round("John", "Nick"));
         }
     }
 
     @Test
-    public void shouldThrowNotRegisteredExeptionForOnePlayer() {
+    public void shouldThrowNotRegisteredExeptionForOnePlayer1() {
         game.register(player1);
         game.register(player2);
 
         try {
-            game.round("John", "Nick");
+            game.round("Non-existed", "Nick");
+        } catch (RuntimeException ex) {
+            Assertions.assertThrows(NotRegisteredException.class, () -> game.round("John", "Nick"));
+        }
+    }
+
+    @Test
+    public void shouldThrowNotRegisteredExeptionForOnePlayer2() {
+        game.register(player1);
+        game.register(player2);
+
+        try {
+            game.round("Non-existed", "Non-existed");
         } catch (RuntimeException ex) {
             Assertions.assertThrows(NotRegisteredException.class, () -> game.round("John", "Nick"));
         }
