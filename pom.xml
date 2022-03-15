@@ -63,8 +63,8 @@
                                 <rule>
                                     <element>CLASS</element>
                                     <excludes>
+                                        <exclude>ru.netology.domain.Player</exclude>
                                         <exclude>*Test</exclude>
-                                        <exclude>Player</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>

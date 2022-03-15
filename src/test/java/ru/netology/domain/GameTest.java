@@ -11,6 +11,7 @@ class GameTest {
     private Player player1 = new Player(12, "Nick", 125);
     private Player player2 = new Player(13, "Luck", 23);
     private Player player3 = new Player(14, "Kitty", 23);
+    private Player player4 = new Player(14, "John", 85);
 
     private Game game = new Game();
 
@@ -80,9 +81,9 @@ class GameTest {
         game.register(player2);
 
         try {
-            game.round("Kitty", "Nick");
+            game.round("John", "Nick");
         } catch (RuntimeException ex) {
-            Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Kitty", "Nick"));
+            Assertions.assertThrows(NotRegisteredException.class, () -> game.round("John", "Nick"));
         }
     }
 
