@@ -64,7 +64,7 @@
                                     <element>CLASS</element>
                                     <excludes>
                                         <exclude>*Test</exclude>
-                                        <exclude>*Player</exclude>
+                                        <exclude>Player</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>
