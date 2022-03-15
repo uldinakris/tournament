@@ -87,5 +87,16 @@ class GameTest {
         }
     }
 
+    @Test
+    public void shouldThrowNotRegisteredExeptionForOnePlayer() {
+        game.register(player1);
+        game.register(player2);
+
+        try {
+            game.round("John", "Nick");
+        } catch (RuntimeException ex) {
+            Assertions.assertThrows(NotRegisteredException.class, () -> game.round("John", "Nick"));
+        }
+    }
 }
 
